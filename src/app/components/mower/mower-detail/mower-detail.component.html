@@ -1,0 +1,26 @@
+<h1>Mower-Details</h1>
+
+<hr>
+<div *ngIf="mower">
+  <div>
+    <label for="">MowerId:</label>
+    <span>{{mower.MowerId}}</span>
+  </div>
+  <div>
+    <label for="">MowerName:</label>
+    <span>{{mower.MowerName}}</span>
+  </div>
+  <div>
+    <label for="">MowerCity:</label>
+    <span>{{mower.MowerCity}}</span>
+  </div>
+  <div>
+    <label for="">MowerService:</label>
+    <span>{{mower.MowerService}}</span>
+  </div>
+
+</div>
+
+<button mat-button color="accent">Edit</button>
+<button mat-button color="primary" routerLink="/mowers">Back to List</button>
+

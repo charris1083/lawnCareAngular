@@ -1,0 +1,33 @@
+<h1>Edit a Mower.</h1>
+<hr>
+
+<div *ngIf="mower">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="_editMowerForm">
+    <div>
+      <div hidden>
+        <mat-form-field>
+          <input matInput placeholder="MowerId" formControlName="MowerrId" type="MowerId" required [value]="mower.MowerId" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="MowerName" formControlName="MowerName" type="MowerName" required [value]="mower.MowerName" />
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="MowerCity" formControlName="MowerCity" type="MowerCity" required [value]="mower.MowerCity" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="MowerNeeds" formControlName="MowerNeeds" type="MowerNeeds" required [value]="mower.MowerNeeds" />
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+  </form>
+</div>
+
+<a mat-button routerLink="/mowers">Back to List</a>

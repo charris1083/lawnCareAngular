@@ -1,0 +1,46 @@
+<h1>Mower Index</h1>
+<a mat-raised-button color="primary" routerLink="/mowers/create">Create New</a>
+<hr>
+
+<div>
+  <mat-table #table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="details">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let mower" class="matColumnSize"> 
+          <i class="material-icons" routerLink="/mowers/detail/{{mower.MowerId}}">library_books</i>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="MowerId">
+      <mat-header-cell *matHeaderCellDef> Mower </mat-header-cell>
+      <mat-cell *matCellDef="let mower"> {{mower.MowerId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="MowerName">
+      <mat-header-cell *matHeaderCellDef> MowerName </mat-header-cell>
+      <mat-cell *matCellDef="let mower"> {{mower.MowerName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="MowerCity">
+      <mat-header-cell *matHeaderCellDef> MowerName </mat-header-cell>
+      <mat-cell *matCellDef="let mower"> {{mower.MowerCity}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="MowerService">
+      <mat-header-cell *matHeaderCellDef> MowerService </mat-header-cell>
+      <mat-cell *matCellDef="let mower"> {{mower.MowerService}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="buttons">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let mower">
+          <i mat-icon class="material-icons orange" color="warn" routerLink="/mowers/edit/:id{{mower.MowerId}}">edit</i>
+          <i class="material-icons red" routerLink="/mowers/delete/{{mower.MowerId}}">delete</i>
+        </mat-cell>
+      </ng-container>
+      
+      <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+    </mat-table>
+</div>
