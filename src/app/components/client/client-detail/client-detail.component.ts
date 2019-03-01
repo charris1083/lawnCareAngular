@@ -16,8 +16,8 @@ client:Client;
     this._activatedRoute.paramMap.subscribe(routeData => {
       this._clientService.getClientsById(routeData.get('id')).subscribe((singleClient: Client)=> {
         this.client = singleClient;
-      })
-    })
+      });
+    });
   }
 
 }

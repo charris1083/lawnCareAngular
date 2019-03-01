@@ -19,11 +19,11 @@ export class ContractsService {
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }
-  createMower(contract: Contract) {
+  createContract(contract: Contract) {
     return this._http.post(`${ApiUrl}/api/Contract`, contract, {headers: this.getHeaders()})
   }
   
-  updateMower(contract: Contract) {
+  updateContract(contract: Contract) {
     return this._http.put(`${ApiUrl}/api/Contract`, contract, {headers: this.getHeaders() });
   }
 }

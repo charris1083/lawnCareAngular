@@ -1,17 +1,21 @@
-<h4>Basic mat-select</h4>
-<mat-form-field>
-  <mat-select placeholder="Client">
-    <mat-option *ngFor="let client of clients" [value]="client.value">
-      {{client.viewValue}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-
-<h4>Basic native select</h4>
-<mat-form-field>
-    <mat-select placeholder="Mower">
-      <mat-option *ngFor="let mower of mowers" [value]="mower.value">
-        {{mower.viewValue}}
+<h4>Select Client</h4>
+<form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]= "contractForm">
+  <mat-form-field>
+    <mat-select placeholder="Client"  type="ClientId" required>
+      <mat-option *ngFor="let client of clientSelect" [value]="client.ClientId">
+        {{client.ClientName}}
       </mat-option>
     </mat-select>
   </mat-form-field>
+  
+  <h4>Select Mower</h4>
+  <mat-form-field>
+    <mat-select placeholder="Mower" type="MowerId" required>
+      <mat-option *ngFor="let mower of mowerSelect" [value]="mower.MowerId">
+        {{mower.MowerName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <button class="buttons" mat-raised-button class="nav-btn" type="submit" >Add contract to list</button>
+</form>

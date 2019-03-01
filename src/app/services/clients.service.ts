@@ -15,7 +15,7 @@ export class ClientsService {
     return this._http.get(`${ApiUrl}/api/clientService/`, {headers: this.getHeaders() }); 
   }
   getClientsById(id: string) {
-    return this._http.get(`${ApiUrl}/api/clientService/${id}`, {headers: this.getHeaders() }); 
+    return this._http.get(`${ApiUrl}/api/ClientService/${id}`, {headers: this.getHeaders() }); 
   }
   
   private getHeaders() {
@@ -26,9 +26,9 @@ export class ClientsService {
   }
 
   updateClient(client: Client) {
-    return this._http.put(`${ApiUrl}/api/clients`, client, {headers: this.getHeaders() });
+    return this._http.put(`${ApiUrl}/api/clientService`, client, {headers: this.getHeaders() });
   }
   deleteClient(id: number) {
-    return this._http.delete(`${ApiUrl}/clients/${id}`, {headers: this.getHeaders() });
+    return this._http.delete(`${ApiUrl}/ClientService/${id}`, {headers: this.getHeaders() });
   }
 }

@@ -8,7 +8,10 @@ import { ClientsService } from 'src/app/services/clients.service';
   styleUrls: ['./client-delete.component.css']
 })
 export class ClientDeleteComponent implements OnInit {
+  
 public client:Client;
+clientId: any;
+
   constructor(private _clientService: ClientsService,private _ar: ActivatedRoute,private _router: Router) { 
     this._ar.paramMap.subscribe(p => {
       this._clientService.getClientsById('').subscribe((singleClient: Client) => {
@@ -21,7 +24,7 @@ public client:Client;
   }
 
   onDelete() {
-    this._clientService.deleteClient(this.client.ClientId).subscribe(deleted => {
+    this._clientService.deleteClient(this.clientId).subscribe(deleted => {
       this._router.navigate(['/clients']);
     })
   }

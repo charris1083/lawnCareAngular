@@ -18,17 +18,25 @@ export class ContractCreateComponent implements OnInit {
   mowerSelect: Mower[];
 
 
-  constructor(private _contractService: ContractsService, private _form: FormBuilder, private _router: Router) {
+  constructor(private _contractService: ContractsService, private _form: FormBuilder, private _router: Router, private _getClientService: ClientsService,private _getMowerService: MowersService) {
     this.createForm();
   }
 
   ngOnInit() {
+    this._getClientService.getClients().subscribe(res =>{ this.clientSelect = res as Client[]; console.log(this.clientSelect)})
+    this._getMowerService.getMowers().subscribe(s => this.mowerSelect = s as Mower[])
   }
   createForm() {
     this.contractForm = this._form.group({
-      CustomerId: Number,
+      ClientId: Number, 
       MowerId: Number,
     })
+  }
+  onSubmit() {
+    console.log(this.contractForm.value)
+   this._contractService.createContract(this.contractForm.value).subscribe(data => { 
+     this._router.navigate(['/contracts' ])
+   })
   }
 
 }

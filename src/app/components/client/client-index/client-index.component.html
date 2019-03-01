@@ -8,13 +8,13 @@
     <ng-container matColumnDef="details">
       <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
       <mat-cell *matCellDef="let client" class="matColumnSize"> 
-        <i class="material-icons" routerLink="/clients/detail/:id{{client.CustomerId}}">library_books</i>
+        <i class="material-icons" routerLink="/clients/detail/{{client.ClientId}}">library_books</i>
       </mat-cell>
     </ng-container>
     
-    <ng-container matColumnDef="CustomerId">
-      <mat-header-cell *matHeaderCellDef> Client </mat-header-cell>
-      <mat-cell *matCellDef="let client"> {{client.CustomerId}} </mat-cell>
+    <ng-container matColumnDef="ClientId">
+      <mat-header-cell *matHeaderCellDef> ClientId </mat-header-cell>
+      <mat-cell *matCellDef="let client"> {{client.ClientId}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="ClientName">

@@ -16,7 +16,7 @@ export class MowerDetailComponent implements OnInit {
   ngOnInit() {
     this._activatedRoute.paramMap.subscribe(routeData => {
       this._mowerService.getMowersById(routeData.get('id')).subscribe((singleMower: Mower) => {
-        this.mower = singleMower
+        this.mower = singleMower;
       })
     })
   }
