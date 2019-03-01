@@ -12,9 +12,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ClientEditComponent implements OnInit {
 
   client : Client;
+  form : any;
 
-
-  private _editClientForm: FormGroup;
+   _editClientForm: FormGroup;
   constructor(private _form: FormBuilder,private _clientService: ClientsService,private _ar: ActivatedRoute,private _router: Router) {
       this._ar.paramMap.subscribe(p => {
         this._clientService.getClients().subscribe((singleClient: Client) => {
@@ -29,7 +29,7 @@ export class ClientEditComponent implements OnInit {
 
   createForm() {
     this._editClientForm = this._form.group({
-      CustomerId: new FormControl(this.client.CustomerId),
+      ClientId: new FormControl(this.client.ClientId),
       ClientName: new FormControl(this.client.ClientName),
       ClientCity: new FormControl(this.client.ClientCity),
       ClientNeeds: new FormControl(this.client.ClientNeeds)
@@ -38,7 +38,7 @@ export class ClientEditComponent implements OnInit {
 
   onSubmit(form) {
     const updateClient: Client = {
-      CustomerId: form.value.CustomerId,
+      ClientId: form.value.ClientId,
       ClientName: form.value.ClientName,
       ClientCity: form.value.ClientCity,
       ClientNeeds: form.value.ClientNeeds

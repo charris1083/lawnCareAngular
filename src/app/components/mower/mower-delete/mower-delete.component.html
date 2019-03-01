@@ -1,3 +1,26 @@
-<p>
-  mower-delete works!
-</p>
+<h1>Delete</h1>
+<h4>Are you sure you want to delete this?</h4>
+
+<hr>
+<div *ngIf="mower">
+  <div>
+    <label for="">MowerId</label>
+    <span>{{mower.MowerId}}</span>
+  </div>
+  <div>
+    <label for="">MowerName</label>
+    <span>{{mower.MowerName}}</span>
+  </div>
+  <div>
+    <label for="">MowerCity</label>
+    <span>{{mower.MowerCity}}</span>
+  </div>
+  <div>
+    <label for="">MowerService</label>
+    <span>{{mower.MowerService}}</span>
+  </div>
+</div>
+
+
+<button mat-button color="warn" (click)="onDelete()">Delete</button>|
+<button mat-button color="primary" >Back to List</button>

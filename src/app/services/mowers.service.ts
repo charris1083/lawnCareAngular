@@ -29,7 +29,7 @@ export class MowersService {
   }
 
   deleteMower(id: number) {
-    return this._http.delete(`${ApiUrl}/mowers/${id}`, { headers: this.getHeaders() });
+    return this._http.delete(`${ApiUrl}/Mower/${id}`, { headers: this.getHeaders() });
   }
 }
 

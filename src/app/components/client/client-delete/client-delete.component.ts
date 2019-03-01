@@ -14,7 +14,7 @@ clientId: any;
 
   constructor(private _clientService: ClientsService,private _ar: ActivatedRoute,private _router: Router) { 
     this._ar.paramMap.subscribe(p => {
-      this._clientService.getClientsById('').subscribe((singleClient: Client) => {
+      this._clientService.getClients().subscribe((singleClient: Client) => {
         this.client = singleClient; 
       });
     })

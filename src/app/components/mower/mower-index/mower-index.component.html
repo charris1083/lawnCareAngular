@@ -23,7 +23,7 @@
     </ng-container>
 
     <ng-container matColumnDef="MowerCity">
-      <mat-header-cell *matHeaderCellDef> MowerName </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> MowerCity </mat-header-cell>
       <mat-cell *matCellDef="let mower"> {{mower.MowerCity}} </mat-cell>
     </ng-container>
 
@@ -36,7 +36,7 @@
         <mat-header-cell *matHeaderCellDef> </mat-header-cell>
         <mat-cell *matCellDef="let mower">
           <i mat-icon class="material-icons orange" color="warn" routerLink="/mowers/edit/:id{{mower.MowerId}}">edit</i>
-          <i class="material-icons red" routerLink="/mowers/delete/{{mower.MowerId}}">delete</i>
+          <i class="material-icons red" routerLink="/mowers/delete/:id{{mower.MowerId}}">delete</i>
         </mat-cell>
       </ng-container>
       

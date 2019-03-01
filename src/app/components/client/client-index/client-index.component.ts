@@ -20,7 +20,7 @@ export class ClientIndexComponent implements OnInit {
   constructor(private _clientService: ClientsService) { }
 
   ngOnInit() {
-    this._clientService.getClientsById("").subscribe((clients: Client[]) =>{
+    this._clientService.getClients().subscribe((clients: Client[]) =>{
       this.clients = clients
       this.dataSource = new MatTableDataSource<Client>(clients);
        });
