@@ -28,7 +28,7 @@ export class ClientCreateComponent implements OnInit {
 
   }
       onSubmit() {
-        this._clientService.createClient(this.clientForm.value).subscribe(data => {
+        this._clientService.createClients(this.clientForm.value).subscribe(data => {
           this._router.navigate(['/clients']);
         });
       }

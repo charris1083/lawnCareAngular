@@ -3,6 +3,7 @@
 }
 
 .nav-btn {
-    margin-right: .5em;
+    margin-left: .6em;
+    float: right;
     background-color: #fafafa;
 }
