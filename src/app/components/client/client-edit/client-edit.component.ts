@@ -17,7 +17,7 @@ export class ClientEditComponent implements OnInit {
    _editClientForm: FormGroup;
   constructor(private _form: FormBuilder,private _clientService: ClientsService,private _ar: ActivatedRoute,private _router: Router) {
       this._ar.paramMap.subscribe(p => {
-        this._clientService.getClients().subscribe((singleClient: Client) => {
+        this._clientService.getClient(p.get('id')).subscribe((singleClient: Client) => {
           this.client = singleClient;
           this.createForm();
         });

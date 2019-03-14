@@ -3,7 +3,22 @@
 }
 
 .nav-btn {
-    margin-left: .6em;
-    float: right;
+    margin-left: 10em;
+    text-align: left;
     background-color: #fafafa;
 }
+/* .nav-btns {
+    margin-left: 20em;
+    text-align: left;
+    background-color: #fafafa;
+}
+.nav-btnss {
+    margin-left: 25em;
+    text-align: left;
+    background-color: #fafafa;
+}
+.nav-btnsss {
+    margin-left: 30em;
+    text-align: left;
+    background-color: #fafafa;
+} */

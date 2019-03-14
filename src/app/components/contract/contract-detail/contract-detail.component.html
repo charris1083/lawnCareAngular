@@ -1,3 +1,37 @@
-<p>
-  contract-detail works!
-</p>
+<h1>Details</h1>
+
+<hr>
+<div *ngIf="contract">
+  <div>
+    <label for="">ContractId:</label>
+    <span>{{contract.ContractId}}</span>
+  </div>
+  <div>
+    <label for="">ClientId:</label>
+    <span>{{contract.ClientId}}</span>
+  </div>
+  <div>
+      <label for="">ClientName:</label>
+      <span>{{contract.ClientName}}</span>
+    </div>
+  <div>
+    <label for="">MowerId:</label>
+    <span>{{contract.MowerId}}</span>
+  </div>
+  <div>
+    <label for="">MowerName:</label>
+    <span>{{contract.MowerName}}</span>
+  </div>
+  <div>
+    <label for="">ClientCity:</label>
+    <span>{{contract.ClientCity}}</span>
+  </div>
+  <div>
+    <label for="">MowerService:</label>
+    <span>{{contract.MowerService}}</span>
+  </div>
+</div>
+
+
+<button mat-button color="accent">Edit</button>
+<button mat-button color="primary" routerLink="/contracts">Back to List</button>

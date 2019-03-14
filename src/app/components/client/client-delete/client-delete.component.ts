@@ -14,7 +14,7 @@ clientId: any;
 
   constructor(private _clientService: ClientsService,private _ar: ActivatedRoute,private _router: Router) { 
     this._ar.paramMap.subscribe(p => {
-      this._clientService.getClients().subscribe((singleClient: Client) => {
+      this._clientService.getClient(p.get('id')).subscribe((singleClient: Client) => {
         this.client = singleClient; 
       });
     })
@@ -24,7 +24,7 @@ clientId: any;
   }
 
   onDelete() {
-    this._clientService.deleteClient(this.clientId).subscribe(deleted => {
+    this._clientService.deleteClient(this.client.ClientId).subscribe(deleted => {
       this._router.navigate(['/clients']);
     })
   }

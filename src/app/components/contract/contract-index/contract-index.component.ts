@@ -11,7 +11,7 @@ import { MatTableDataSource } from '@angular/material';
 export class ContractIndexComponent implements OnInit {
 
   contracts: Contract[];
-  columnNames = ['details', 'CustomerId', 'MowerId', 'MowerCity', 'MowerService', 'buttons']
+  columnNames = ['details', 'ContractId', 'ClientId','MowerId', 'buttons']
   dataSource: MatTableDataSource<Contract>
 
   constructor(private _contractService: ContractsService) { }

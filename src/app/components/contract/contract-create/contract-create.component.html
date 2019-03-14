@@ -1,7 +1,7 @@
-<h4>Select Client</h4>
+<h4>Select Contract</h4>
 <form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]= "contractForm">
   <mat-form-field>
-    <mat-select placeholder="Client"  type="ClientId" required>
+    <mat-select placeholder="Client" formControlName="ClientId" type="ClientId" required>
       <mat-option *ngFor="let client of clientSelect" [value]="client.ClientId">
         {{client.ClientName}}
       </mat-option>
@@ -10,7 +10,7 @@
   
   <h4>Select Mower</h4>
   <mat-form-field>
-    <mat-select placeholder="Mower" type="MowerId" required>
+    <mat-select placeholder="Mower" formControlName="MowerId" type="MowerId" required>
       <mat-option *ngFor="let mower of mowerSelect" [value]="mower.MowerId">
         {{mower.MowerName}}
       </mat-option>

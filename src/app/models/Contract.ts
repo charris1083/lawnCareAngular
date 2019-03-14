@@ -1,5 +1,5 @@
 export interface Contract{
-    CustomerId?:number;
+    ContractId: number;
     ClientId:number;
     MowerId: number;
     MowerName: string;

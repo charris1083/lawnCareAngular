@@ -1,3 +1,21 @@
-<p>
-  contract-edit works!
-</p>
+<h4>Select Contract</h4>
+<form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]= "contractForm">
+  <mat-form-field>
+    <mat-select placeholder="Client" formControlName="ClientId" type="ClientId" required>
+      <mat-option *ngFor="let client of clientSelect" [value]="client.ClientId">
+        {{client.ClientName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <h4>Select Mower</h4>
+  <mat-form-field>
+    <mat-select placeholder="Mower" formControlName="MowerId" type="MowerId" required>
+      <mat-option *ngFor="let mower of mowerSelect" [value]="mower.MowerId">
+        {{mower.MowerName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <button class="buttons" mat-raised-button class="nav-btn" type="submit" >Add contract to list</button>
+</form> 

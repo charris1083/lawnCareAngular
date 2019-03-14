@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Client } from '../models/client';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
 const ApiUrl = 'http://localhost:50171'
@@ -21,7 +21,7 @@ export class ClientsService {
   }
   
   getClient(id: string) {
-    return this._http.get(`${ApiUrl}api/Client/${id}`, { headers: this.getHeaders() });
+    return this._http.get(`${ApiUrl}/api/Client/${id}`, { headers: this.getHeaders() });
   }
 
   createClients(client: Client) {
@@ -32,7 +32,7 @@ export class ClientsService {
     return this._http.put(`${ApiUrl}/api/Client`, client, {headers: this.getHeaders() });
   }
   deleteClient(id: number) {
-    return this._http.delete(`${ApiUrl}api/Client/${id}`, {headers: this.getHeaders() });
+    return this._http.delete(`${ApiUrl}/api/Client/${id}`, {headers: this.getHeaders() });
   }
   
   private getHeaders() {

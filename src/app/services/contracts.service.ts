@@ -12,6 +12,9 @@ export class ContractsService {
   getContracts() {
     return this._http.get(`${ApiUrl}/api/Contract/`, {headers: this.getHeaders() })
   }
+  postContracts(contract: Contract ) {
+    return this._http.post(`${ApiUrl}/api/Contract/`, {headers: this.getHeaders() });
+  }
   getContractsById(id: string) {
     return this._http.get(`${ApiUrl}/api/Contract/${id}`, {headers: this.getHeaders() }); 
   }

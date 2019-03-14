@@ -17,12 +17,12 @@
       <mat-cell *matCellDef="let contract"> {{contract.ContractId}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="ClientName">
+    <ng-container matColumnDef="ClientId">
       <mat-header-cell *matHeaderCellDef> ClientName </mat-header-cell>
       <mat-cell *matCellDef="let contract"> {{contract.ClientName}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="MowerName">
+    <ng-container matColumnDef="MowerId">
       <mat-header-cell *matHeaderCellDef> MowerName </mat-header-cell>
       <mat-cell *matCellDef="let contract"> {{contract.MowerName}} </mat-cell>
     </ng-container>
@@ -30,11 +30,6 @@
     <ng-container matColumnDef="MowerCity">
       <mat-header-cell *matHeaderCellDef> MowerName </mat-header-cell>
       <mat-cell *matCellDef="let contract"> {{contract.MowerCity}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="ContractService">
-      <mat-header-cell *matHeaderCellDef> ContractService </mat-header-cell>
-      <mat-cell *matCellDef="let contract"> {{contarct.MowerService}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="buttons">

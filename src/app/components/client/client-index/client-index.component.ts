@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ClientsService } from '../../../services/clients.service';
 import { Client } from '../../../models/client';
 import { DataSource } from '@angular/cdk/collections';
-//import { Observables } from 'rxjs/Observable';
-//import 'rxjs/add/observable/of';
 import { MatTableDataSource } from '@angular/material';
 
 @Component({
